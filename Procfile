@@ -1,1 +1,0 @@
-web: gunicorn Praneeth_Marella.wsgi
