@@ -497,6 +497,7 @@ textarea:focus {
       }
 }
 
-form {
-      text-align: center;
+.center-div {
+      margin: 0 auto;
+      width: 100px;
 }
