@@ -1,5 +1,6 @@
 /*--------------- basic styling --------------- */
-html, body {
+html,
+body {
       margin: 0;
       padding: 0;
       width: 100%;
@@ -34,13 +35,14 @@ html, body {
 
 .anim-typewriter {
       animation: typewriter 3s steps(40) 1s 1 normal both,
-      blinkTextCussor 500ms steps(50) infinite normal;
+            blinkTextCussor 500ms steps(50) infinite normal;
 }
 
 @keyframes typewriter {
       from {
             width: 0;
       }
+
       to {
             width: 50em;
       }
@@ -51,6 +53,7 @@ html, body {
             from {
                   width: 0;
             }
+
             to {
                   width: 18em;
             }
@@ -61,6 +64,7 @@ html, body {
       from {
             border-right-color: rgba(255, 255, 255, 0.75);
       }
+
       to {
             border-right-color: transparent;
       }
@@ -272,9 +276,11 @@ nav #menu li a:hover {
             transform: translate(0, -20px) rotate(45deg);
             opacity: 0;
       }
+
       50% {
             opacity: 1;
       }
+
       100% {
             transform: translate(0, 20px) rotate(45deg);
             opacity: 0;
@@ -287,16 +293,16 @@ h6 {
 }
 
 div .projectstyle {
-    display: flex;
-    justify-content: space-around;
-    color: white;
-    align-content: center;
+      display: flex;
+      justify-content: space-around;
+      color: white;
+      align-content: center;
 }
 
 div .projectstyle i {
-    color: white;
-    padding-right: 30px;
-    align-content: center;
+      color: white;
+      padding-right: 30px;
+      align-content: center;
 }
 
 .vertical {
@@ -382,7 +388,8 @@ div .projectstyle i {
       background: #c4302b;
 }
 
-#media, #address {
+#media,
+#address {
       text-align: right;
 }
 
@@ -395,7 +402,11 @@ div .projectstyle i {
 }
 
 @media(max-width: 768px) {
-      .collab, #personal, #media, #address {
+
+      .collab,
+      #personal,
+      #media,
+      #address {
             text-align: center;
       }
 
@@ -439,7 +450,8 @@ div .projectstyle i {
       padding-left: 5px;
 }
 
-#contact-form input, #contact-form textarea {
+#contact-form input,
+#contact-form textarea {
       width: 100%;
       padding: 5px;
       border: none;
@@ -485,3 +497,6 @@ textarea:focus {
       }
 }
 
+form {
+      text-align: center;
+}
