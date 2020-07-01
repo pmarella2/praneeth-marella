@@ -93,7 +93,7 @@ nav #brand a {
 }
 
 nav #brand a:hover {
-      text-decoration: none;
+      text-decoration: underline;
 }
 
 nav #menu {
@@ -123,7 +123,7 @@ nav #menu li a {
 }
 
 nav #menu li a:hover {
-      text-decoration: none;
+      text-decoration: underline;
 }
 
 #toggle {
