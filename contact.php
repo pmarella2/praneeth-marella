@@ -1,35 +1,40 @@
 <?php
-if($_POST)
-{
-$field_name = $_POST['cf_name'];
-$field_email = $_POST['cf_email'];
-$field_message = $_POST['cf_message'];
 
-$mail_to = 'praneethmarella@icloud.com';
-$subject = 'Message from a site visitor'.$field_name;
+if ($_POST) {
+    $cf_name    = "";
+    $cf_email   = "";
+    $cf_message = "";
 
-$body_message = 'From: '.$field_name."\n";
-$body_message .= 'E-mail: '.$field_email."\n";
-$body_message .= 'Message: '.$field_message;
+    if (isset($_POST['cf_name'])) {
+        $cf_name = filter_var($_POST['cf_name'], FILTER_SANITIZE_STRING);
+    }
 
-$headers = 'From: '.$field_email."\r\n";
-$headers .= 'Reply-To: '.$field_email."\r\n";
+    if (isset($_POST['cf_email'])) {
+        $cf_email = str_replace(array(
+            "\r",
+            "\n",
+            "%0a",
+            "%0d"
+        ), '', $_POST['cf_email']);
+        $cf_email = filter_var($cf_email, FILTER_VALIDATE_EMAIL);
+    }
 
-$mail_status = mail($mail_to, $subject, $body_message, $headers);
+    if (isset($_POST['cf_message'])) {
+        $cf_message = htmlspecialchars($_POST['cf_message']);
+    }
 
-if ($mail_status) { ?>
-	<script language="javascript" type="text/javascript">
-		alert('Thank you for the message. I look forward to reading it!');
-		window.location = 'contact.html';
-	</script>
-<?php
+    $recipient = "praneethmarella@icloud.com";
+
+    $headers = 'MIME-Version: 1.0' . "\r\n" . 'Content-type: text/html; charset=utf-8' . "\r\n" . 'From: ' . $cf_email . "\r\n" . 'Reply-To: ' . $field_email . "\r\n";
+
+    if (mail($recipient, $cf_name, $cf_message, $headers)) {
+        echo "<p>Thank you for dropping a message, $cf_name. I look forward to reading it!</p>";
+    } else {
+        echo '<p>Message failed to send. Please use "link up" link below..</p>';
+    }
+
+} else {
+    echo '<p>Something went wrong in the contact form.</p>';
 }
-else { ?>
-	<script language="javascript" type="text/javascript">
-		alert('Message failed to send. Please use "link up" link below.');
-		window.location = 'contact.html';
-	</script>
-<?php
-}
-}
+
 ?>
