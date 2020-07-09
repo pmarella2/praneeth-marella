@@ -1,4 +1,6 @@
 <?php
+if($_POST)
+{
 $field_name = $_POST['cf_name'];
 $field_email = $_POST['cf_email'];
 $field_message = $_POST['cf_message'];
@@ -28,5 +30,6 @@ else { ?>
 		window.location = 'contact.html';
 	</script>
 <?php
+}
 }
 ?>
