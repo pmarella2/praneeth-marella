@@ -1,4 +1,4 @@
 # praneethmarella.xyz: Personal Website
 
 ## **Description:**
-- TO-DO
+- Personal protfolio website
