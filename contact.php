@@ -23,7 +23,7 @@ if ($_POST) {
         $cf_message = htmlspecialchars($_POST['cf_message']);
     }
 
-    $recipient = "praneethmarella@icloud.com";
+    $recipient = "praneeth.babu23@gmail.com";
 
     $headers = 'MIME-Version: 1.0' . "\r\n" . 'Content-type: text/html; charset=utf-8' . "\r\n" . 'From: ' . $cf_email . "\r\n" . 'Reply-To: ' . $field_email . "\r\n";
 
